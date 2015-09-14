@@ -1,0 +1,32 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `save_transaction`(
+	v_name VARCHAR(50),
+	v_amount INT,
+	v_tags VARCHAR(50),
+	v_fromacc VARCHAR(50),
+	v_toacc VARCHAR(50),
+	v_type VARCHAR(50),
+	v_transactiondate DATE
+)
+BEGIN
+	insert into devathon.transactions
+	(
+		NAME,
+		ACCOUNT,
+		TAGS,
+        FROMACC,
+        TOACC,
+        TYPE,
+        TRANSACTIONDATE
+	)
+	values
+	(
+		v_name,
+        v_amount,
+        v_tags,
+        v_fromacc,
+        v_toacc,
+		v_type,
+        v_transactiondate
+	);
+END
+
